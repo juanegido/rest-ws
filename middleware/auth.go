@@ -4,6 +4,7 @@ import (
 	"net/http"
 	"rest-ws/helpers"
 	"rest-ws/server"
+	"strings"
 )
 
 var (
@@ -11,8 +12,8 @@ var (
 )
 
 func shouldCheckToken(route string) bool {
-	for _, r := range NO_AUTH_NEEDED {
-		if r == route {
+	for _, p := range NO_AUTH_NEEDED {
+		if strings.Contains(route, p) {
 			return false
 		}
 	}
