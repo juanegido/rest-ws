@@ -19,7 +19,7 @@ func shouldCheckToken(route string) bool {
 	return true
 }
 
-func CheckAuthMiddlware(s server.Server) func(h http.Handler) http.Handler {
+func CheckAuthMiddleware(s server.Server) func(h http.Handler) http.Handler {
 	return func(next http.Handler) http.Handler {
 		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 			if !shouldCheckToken(r.URL.Path) {

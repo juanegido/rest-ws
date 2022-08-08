@@ -40,7 +40,7 @@ func BindRoutes(s server.Server, r *mux.Router) {
 	// This is a way to bind the handler to the router
 	// The first argument is the path of the route
 	// The second argument is the handler function that will be called when the route is matched
-	r.Use(middleware.CheckAuthMiddlware(s))
+	r.Use(middleware.CheckAuthMiddleware(s))
 	r.HandleFunc("/", handlers.HomeHandler(s)).Methods(http.MethodGet)
 	r.HandleFunc("/signup", handlers.SignupHandler(s)).Methods(http.MethodPost)
 	r.HandleFunc("/login", handlers.LoginHandler(s)).Methods(http.MethodPost)
