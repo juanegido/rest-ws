@@ -69,7 +69,7 @@ func (r *PostgresRepository) InsertUser(ctx context.Context, user *models.User) 
 // GetUserById returns a user by its ID.
 func (r *PostgresRepository) GetUserById(ctx context.Context, id string) (*models.User, error) {
 	var user models.User
-	err := r.db.QueryRowContext(ctx, "SELECT id, name, email, password FROM users WHERE id = $1", id).Scan(&user.Id, &user.Name, &user.Email, &user.Password)
+	err := r.db.QueryRowContext(ctx, "SELECT id, email FROM users WHERE id = $1", id).Scan(&user.Id, &user.Email)
 	if err != nil {
 		return nil, err
 	}
