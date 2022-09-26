@@ -1,6 +1,6 @@
 ### Rest WS in GO
 
-This repository contains a simple HTTP API written in Go using standard library and Gorilla Mux. 
+This repository contains a simple rest WS written in Go using standard library and Gorilla Mux. 
 It is a simple CRUD of products and users with JWT authentication.
 
 Endpoints:
